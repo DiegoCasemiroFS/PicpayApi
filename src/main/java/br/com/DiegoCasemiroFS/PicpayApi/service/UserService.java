@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository repository;
 
     public void validateTransaction(User sender, BigDecimal amount) throws Exception{
         if (sender.getUserType() == UserType.MERCHANT){
@@ -24,12 +24,12 @@ public class UserService {
         }
     }
 
-    public void findUserById(Long id) throws Exception{
-        this.userRepository.finduserById(id).orElseThrow(() -> new Exception("Usuário não encontrado"));
+    public User findUserById(Long id) throws Exception{
+        return this.repository.finduserById(id).orElseThrow(() -> new Exception("Usuário não encontrado"));
     }
 
-    public void saveuser(User user){
-        this.userRepository.save(user);
+    public void saveUser(User user){
+        this.repository.save(user);
     }
 
 }
