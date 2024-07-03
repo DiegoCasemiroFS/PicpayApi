@@ -1,10 +1,12 @@
 package br.com.DiegoCasemiroFS.PicpayApi.entity;
 
+import br.com.DiegoCasemiroFS.PicpayApi.entity.dtos.UserDTO;
 import br.com.DiegoCasemiroFS.PicpayApi.entity.enums.UserType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
@@ -12,6 +14,7 @@ import java.math.BigDecimal;
 @Table(name = "usuarios")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode
 public class User {
 
@@ -35,4 +38,13 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
+
+    public User(UserDTO data) {
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.document = data.document();
+        this.email = data.email();
+        this.password = data.password();
+        this.balance = data.balance();
+    }
 }
