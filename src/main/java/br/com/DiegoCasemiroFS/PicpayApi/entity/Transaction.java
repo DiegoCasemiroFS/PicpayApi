@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -12,7 +13,8 @@ import java.time.LocalDateTime;
 @Table(name = "transacoes")
 @Data
 @AllArgsConstructor
-@EqualsAndHashCode
+@NoArgsConstructor
+@EqualsAndHashCode(of="id")
 public class Transaction {
 
     @Id
@@ -23,7 +25,7 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn(name = "sender_id")
-    private User sander;
+    private User sender;
 
     @ManyToOne
     @JoinColumn(name = "receiver_id")
