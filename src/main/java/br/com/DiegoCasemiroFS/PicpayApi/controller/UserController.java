@@ -1,7 +1,7 @@
 package br.com.DiegoCasemiroFS.PicpayApi.controller;
 
 import br.com.DiegoCasemiroFS.PicpayApi.entity.User;
-import br.com.DiegoCasemiroFS.PicpayApi.entity.dtos.UserDTO;
+import br.com.DiegoCasemiroFS.PicpayApi.dtos.UserDTO;
 import br.com.DiegoCasemiroFS.PicpayApi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

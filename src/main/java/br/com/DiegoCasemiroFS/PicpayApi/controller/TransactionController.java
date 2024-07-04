@@ -1,7 +1,7 @@
 package br.com.DiegoCasemiroFS.PicpayApi.controller;
 
 import br.com.DiegoCasemiroFS.PicpayApi.entity.Transaction;
-import br.com.DiegoCasemiroFS.PicpayApi.entity.dtos.TransactionDTO;
+import br.com.DiegoCasemiroFS.PicpayApi.dtos.TransactionDTO;
 import br.com.DiegoCasemiroFS.PicpayApi.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

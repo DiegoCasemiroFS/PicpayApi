@@ -1,6 +1,6 @@
 package br.com.DiegoCasemiroFS.PicpayApi.entity;
 
-import br.com.DiegoCasemiroFS.PicpayApi.entity.dtos.UserDTO;
+import br.com.DiegoCasemiroFS.PicpayApi.dtos.UserDTO;
 import br.com.DiegoCasemiroFS.PicpayApi.entity.enums.UserType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package br.com.DiegoCasemiroFS.PicpayApi.service;
 
 import br.com.DiegoCasemiroFS.PicpayApi.entity.User;
-import br.com.DiegoCasemiroFS.PicpayApi.entity.dtos.NotificationDTO;
+import br.com.DiegoCasemiroFS.PicpayApi.dtos.NotificationDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
 package br.com.DiegoCasemiroFS.PicpayApi.service;
 
 import br.com.DiegoCasemiroFS.PicpayApi.entity.User;
-import br.com.DiegoCasemiroFS.PicpayApi.entity.dtos.UserDTO;
+import br.com.DiegoCasemiroFS.PicpayApi.dtos.UserDTO;
 import br.com.DiegoCasemiroFS.PicpayApi.entity.enums.UserType;
 import br.com.DiegoCasemiroFS.PicpayApi.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
