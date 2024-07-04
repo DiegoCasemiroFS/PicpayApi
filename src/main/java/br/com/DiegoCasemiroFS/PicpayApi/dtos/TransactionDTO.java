@@ -1,4 +1,4 @@
-package br.com.DiegoCasemiroFS.PicpayApi.entity.dtos;
+package br.com.DiegoCasemiroFS.PicpayApi.dtos;
 
 import java.math.BigDecimal;
 

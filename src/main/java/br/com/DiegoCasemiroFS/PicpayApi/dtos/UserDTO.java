@@ -1,4 +1,4 @@
-package br.com.DiegoCasemiroFS.PicpayApi.entity.dtos;
+package br.com.DiegoCasemiroFS.PicpayApi.dtos;
 
 import br.com.DiegoCasemiroFS.PicpayApi.entity.enums.UserType;
 
