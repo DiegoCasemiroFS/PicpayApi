@@ -4,6 +4,8 @@ import br.com.DiegoCasemiroFS.PicpayApi.dtos.TransactionDTO;
 import br.com.DiegoCasemiroFS.PicpayApi.entity.User;
 import br.com.DiegoCasemiroFS.PicpayApi.entity.enums.UserType;
 import br.com.DiegoCasemiroFS.PicpayApi.repository.TransactionRepository;
+import org.hibernate.internal.AbstractSharedSessionContract;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -80,8 +82,37 @@ class TransactionServiceTest {
         verify(notificationService, times(1)).sendNotification(receiver, "Transacao recebida com sucesso");
     }
 
-/*    @Test
+    @Test
     @DisplayName("should throws excpetion when transaction is not allowed")
-    void createTransactionFailure() {
-    }*/
+    void createTransactionFailure() throws Exception{
+
+        User sender = new User(1L,
+                "Diego",
+                "Casemiro",
+                "12312312312",
+                "diego@gmail.com",
+                "1234",
+                new BigDecimal(10),
+                UserType.COMMON);
+        User receiver = new User(2L,
+                "Luisa",
+                "Casemiro",
+                "12312312313",
+                "luisa@gmail.com",
+                "5678",
+                new BigDecimal(10),
+                UserType.COMMON);
+
+        when(userService.findUserById(1L)).thenReturn(sender);
+        when(userService.findUserById(2L)).thenReturn(receiver);
+
+        when(authorizationService.authorizeTransaction(any(), any())).thenReturn(false);
+
+        Exception thrown = Assertions.assertThrows(Exception.class, () -> {
+            TransactionDTO request = new TransactionDTO(new BigDecimal(10), 1L, 2L);
+            transactionService.createTransaction(request);
+        });
+
+        Assertions.assertEquals("Transacao não autorizada", thrown.getMessage());
+    }
 }
